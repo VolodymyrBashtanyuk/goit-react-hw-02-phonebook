@@ -59,7 +59,6 @@ export class App extends Component {
   };
 
   render() {
-    console.log(this.state.contacts.length);
     return (
       <>
         <Title>Phonebook</Title>

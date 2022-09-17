@@ -1,3 +1,4 @@
+import PropsType from 'prop-types';
 import { nanoid } from 'nanoid';
 import { Wrapper } from './FilterContactStyle';
 import { Label, Input } from 'components/ContactForm/ContactFormStyle';
@@ -20,4 +21,8 @@ export const Filter = ({ onChange, value }) => {
       />
     </Wrapper>
   );
+};
+
+Filter.propTypes = {
+  onChange: PropsType.func.isRequired,
 };
