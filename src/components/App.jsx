@@ -59,14 +59,21 @@ export class App extends Component {
   };
 
   render() {
+    console.log(this.state.contacts.length);
     return (
       <>
         <Title>Phonebook</Title>
         <ContactForm onAddContacs={this.addContacts} />
-
-        <SubTitle>Contacts</SubTitle>
-        <Filter onChange={this.filterChange} value={this.state.filter} />
-        <ContactList items={this.getFilter()} onRemove={this.removeContact} />
+        {this.state.contacts.length !== 0 && (
+          <>
+            <SubTitle>Contacts</SubTitle>
+            <Filter onChange={this.filterChange} value={this.state.filter} />
+            <ContactList
+              items={this.getFilter()}
+              onRemove={this.removeContact}
+            />
+          </>
+        )}
       </>
     );
   }
